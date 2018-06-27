@@ -25,4 +25,4 @@ main = do
     (\x -> putStrLn ("400: " ++ show x )) ( validateAge "400" )
     (\x -> putStrLn ("20: " ++ show x )) ( validateAge "20" )
     (\x -> putStrLn ("19: " ++ show x )) ( validateAge "19" )
-    --(\x -> putStrLn ("validateAgePrint: " ++ show x )) ( validateAgePrint' ["safsdf", "-100", "garbage", "400", "7", "15", "20", "25"] )
+    (\x -> putStrLn ("validateAgePrint: " ++ show x )) ( validateAgePrint' ["safsdf", "-100", "garbage", "400", "7", "15", "20", "25"] )
