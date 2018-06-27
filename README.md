@@ -1,3 +1,3 @@
 # Haskell (learn functional programming) by examples
 
-everyone-can-code.github.io/fp/
+[Functional Programming - Guide!](everyone-can-code.github.io/fp/)
