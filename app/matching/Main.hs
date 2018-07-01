@@ -1,13 +1,21 @@
--- pattern guard
+-- pattern matching
 module Main where
 
 
-testFunction :: Integer -> Integer
-testFunction n  | n == 0     = 1
-                | n > 0      = n * testFunction(n - 1)
-                | otherwise  = error "test error"
+data AgeError = AgeInvalidInput
+            | AgeBelowLegalAge
+            | AgeImpossible
+            | AgePossible
+    deriving (Eq, Show, Read)
 
+validateAge :: Integer -> AgeError
+validateAge age = case age of
+    _ | age < 0    -> AgeImpossible
+    _ | age <= 18  -> AgeBelowLegalAge
+    _ | age > 200  -> AgeImpossible
+    _              -> AgePossible
 
 main :: IO ()
 main = do
-    (\x -> putStrLn ("pattern guard: " ++ show x )) ( testFunction 5 )
+    (\x -> putStrLn ("validateAge: " ++ show x )) ( validateAge 15 )
+    (\x -> putStrLn ("validateAge: " ++ show x )) ( validateAge 25 )
